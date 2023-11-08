@@ -46,14 +46,26 @@ exports.warehouseOneTwo = async (req, res) => {
     `https://script.googleusercontent.com/macros/echo?user_content_key=AxSaJwXo0wQxKjzIHKIUQk1p5SOuSEQWCmvLf5bFGUBN_Z3qMmLnC5zprKOH6keSzhZKIHV-hhaqFNzFE1AJYkYk3gO5hW6-m5_BxDlH2jW0nuo2oDemN9CCS2h10ox_1xSncGQajx_ryfhECjZEnAKLH1GCfDdq3pRgL6bND0r7fOkTqYasC4kF4RQDTI--KyfG8klPwKjodXMw9ljIacoT1BXgTaYVKwr1UJF4zxzW8hjFFHGcTw&lib=MlNzCj5pyppvDPljc-bLYMQhq58PSEe5f`
   );
 
+  const pie_chart_total = axios.get(
+    `https://script.googleusercontent.com/macros/echo?user_content_key=h--c5HHsRoddgDojcsQ2k57hpfCp4Y-WPPiTGylKiyJB1RHy_MWEztJxD2uLedFVbLlgLws21JWFsdL8iDj0OAc6nbrFRrVMm5_BxDlH2jW0nuo2oDemN9CCS2h10ox_1xSncGQajx_ryfhECjZEnERVdyHHj_TJvjz5gLJw4zQh4ga-zA5HXBfJz2-RChCKvbqu_Qvyh7Jm3Qy-2hLj8NcERE5cVyOwCO3hdaR_A7MJ04aStq5dhw&lib=MlNzCj5pyppvDPljc-bLYMQhq58PSEe5f`
+  );
+
   axios
-    .all([queList, stf_pr_url, winner_url, stuff_url, pie_chart_url])
+    .all([
+      queList,
+      stf_pr_url,
+      winner_url,
+      stuff_url,
+      pie_chart_url,
+      pie_chart_total,
+    ])
     .then(function (data) {
       const questions = data[0];
       const projectDetails = data[1];
       const winners = data[2];
       const stuffingDataSet = data[3];
       const pie_chart = data[4];
+      const pie_t = data[5];
 
       res.render('warehouseOneTwo', {
         stuffingReportWarehouseOneTwo: questions.data.data,
@@ -61,6 +73,7 @@ exports.warehouseOneTwo = async (req, res) => {
         winners_list: winners.data.data,
         stuffingReportWarehouseThree: stuffingDataSet.data.data,
         pieChart: JSON.stringify(pie_chart.data.data),
+        pietotal: JSON.stringify(pie_t.data.data),
         isLoaded: true,
         title: 'Quiz Dashboard',
       });

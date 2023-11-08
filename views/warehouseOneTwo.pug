@@ -43,6 +43,10 @@ html
     .outerDiv
         .leftDiv
             table.table.table-sm.table-hover
+              thead 
+                tr 
+                  th= `List of winners`
+            table.table.table-sm.table-hover
               thead
                 tr.table-info
                   th(scope='col') Date
@@ -63,7 +67,13 @@ html
             
 
         .rightDiv
-          #piechart(style='width: 900px; height: 500px;')
+          table.table.table-sm.table-hover
+              thead 
+                tr 
+                  th= `Visual Representation`
+          #piecharttotal(style='width: 600px; height: 200px;')
+          #piechart(style='width: 600px; height: 200px;')
+          
     script(src='https://cdnjs.cloudflare.com/ajax/libs/axios/1.4.0/axios.min.js')
     script(src='/js/login.js')
     script(src='/js/logout.js')
@@ -101,9 +111,23 @@ html
       chartjss = JSON.parse(chartjss);
       var data = google.visualization.arrayToDataTable(chartjss);
       var options = {
-      title: 'Quiz Analysis'
+      title: ''
       };
       var chart = new google.visualization.PieChart(document.getElementById('piechart'));
+      chart.draw(data, options);
+      }
+    script(type='text/javascript', src='https://www.gstatic.com/charts/loader.js')
+    script(type='text/javascript').
+      google.charts.load('current', {'packages':['corechart']});
+      google.charts.setOnLoadCallback(drawChart);
+      function drawChart() {
+      let chartjss= !{JSON.stringify(pietotal)};
+      chartjss = JSON.parse(chartjss);
+      var data = google.visualization.arrayToDataTable(chartjss);
+      var options = {
+      title: 'Quiz Analysis'
+      };
+      var chart = new google.visualization.PieChart(document.getElementById('piecharttotal'));
       chart.draw(data, options);
       }
       
