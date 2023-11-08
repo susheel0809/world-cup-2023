@@ -43,7 +43,7 @@ exports.warehouseOneTwo = async (req, res) => {
   );
 
   const pie_chart_url = axios.get(
-    `https://script.googleusercontent.com/macros/echo?user_content_key=a8MxO_yzhM5XsSf4KBlyoofpkIybDPpZVdoPcrCoUpvW7QCbMP-DHtCnQrCYyb7qrAaky-v840MLRTLgjvrfzhgact53uBcfm5_BxDlH2jW0nuo2oDemN9CCS2h10ox_1xSncGQajx_ryfhECjZEnCLg2QiVgThSLpsn8RIe3jYVMU8vOYy-aj8MjNJGTTP8SxvrODfvB5ENt1kvPAO4G_0DLs9MQeRTtAfmJ8x20RP4XDhLM_RWsw&lib=MlNzCj5pyppvDPljc-bLYMQhq58PSEe5f`
+    `https://script.googleusercontent.com/macros/echo?user_content_key=AxSaJwXo0wQxKjzIHKIUQk1p5SOuSEQWCmvLf5bFGUBN_Z3qMmLnC5zprKOH6keSzhZKIHV-hhaqFNzFE1AJYkYk3gO5hW6-m5_BxDlH2jW0nuo2oDemN9CCS2h10ox_1xSncGQajx_ryfhECjZEnAKLH1GCfDdq3pRgL6bND0r7fOkTqYasC4kF4RQDTI--KyfG8klPwKjodXMw9ljIacoT1BXgTaYVKwr1UJF4zxzW8hjFFHGcTw&lib=MlNzCj5pyppvDPljc-bLYMQhq58PSEe5f`
   );
 
   axios
