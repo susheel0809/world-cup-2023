@@ -24,61 +24,45 @@ exports.warehouseOneTwo = async (req, res) => {
   // console.log(end_date, ' end date');
 
   //stuffing data set
-  const stuf_url = axios.get(
-    `https://script.google.com/macros/s/AKfycbx30t5HxE1OP6y-r4dbqdXlekSxfuawnJxeLE0zbQwCncq1Vm_fqVXMLI0gMpDDIF2p/exec?start_date=${start_date}&end_date=${end_date}`
+  const queList = axios.get(
+    `https://script.googleusercontent.com/macros/echo?user_content_key=0YpMd488Y7yLLvsuHwJ2Mst9BcpUlTogztGvQeyCWOOIxysZONQeqLj9tBC932OaBs5rR-LDxEGbHmwgh_eVxpFI9q5niLXbm5_BxDlH2jW0nuo2oDemN9CCS2h10ox_1xSncGQajx_ryfhECjZEnGPHWZu8M87OcrCNvkRS1kd6vyWHjauVtEg6Ay3CzcuSx85sc1KBZichGKKxhK4BiaO_0Ngrs5JlTY4PZmFyjgqYuU_krHz6eA&lib=MlNzCj5pyppvDPljc-bLYMQhq58PSEe5f`
   );
 
   //stuffing project details
   const stf_pr_url = axios.get(
-    'https://script.google.com/macros/s/AKfycbwO1rAWoKTGpFoQ3iTuMRuuGLtGls69X2gqgUOhON-vPnUH8oNfqS1m5P3ddAErRxb4/exec'
-  );
-
-  //carting project details
-  const carting_pr_url = axios.get(
-    'https://script.googleusercontent.com/macros/echo?user_content_key=9ps-rtEIShoLUMcDC1oifcwNfMoSzAu2ZxCNMJk71sLC5uKAdD9OhF9vz0fj7X-opkW6Fv1MfibUjDfl1JoA_rC_c-XPB7bDm5_BxDlH2jW0nuo2oDemN9CCS2h10ox_1xSncGQajx_ryfhECjZEnH0sfn7Co64_k9yoaRKhcZzK2dJ1SJ4mXqhcmgJlxP-27B3glFl51R9rqkFYD5r99xRHaSOVQvfO4kQZmuTEmRyX70tbOYaRIdz9Jw9Md8uu&lib=MIAm_Kgor3BeFH3Gjej52bzWkEKQozq2-'
-  );
-
-  // carting data set
-  const carting_data_set = axios.get(
-    `https://script.google.com/macros/s/AKfycby7xloBRXBCakpg1UHrbgMlaxyttd-duYdiqk2fyEOcijlv3xD0Usp0s2bQE9ql_eQ_uQ/exec?start_date=${start_date}&end_date=${end_date}`
+    'https://script.googleusercontent.com/macros/echo?user_content_key=z2ppqTIypTUQaE8PIJPVsf131_LEGk3RiZzuE5O2DaUE3L-E6uJXei7Ia2v8oo5WPBUZ09WPhA0r46DB82xVYCwXOasLCUCCm5_BxDlH2jW0nuo2oDemN9CCS2h10ox_1xSncGQajx_ryfhECjZEnCEFvS9PqtgTKu-7sYVI2UJNsjQW37nZMxpgGwCrHCgeqOdVfglpgq6VoQzqzf4_p1x6C4q1d1wC1qR40QKVrHg9AsnIDTDdgQ&lib=MlNzCj5pyppvDPljc-bLYMQhq58PSEe5f'
   );
 
   //stuffing combo chart
-  const chart_s_url = axios.get(
-    `https://script.google.com/macros/s/AKfycbyXS9cGbuEccBWN7bC3G8DEmxUINarqwJofaB2iPfe5M5ooOCcbHwyoeH4KlbeNm5oQ/exec?start_date=${start_date}&end_date=${end_date}`
+  const winner_url = axios.get(
+    `https://script.googleusercontent.com/macros/echo?user_content_key=B9sFlPrPwuA42k0IeBwtvnhCOT4VRLyB7loHUXcAqSzJoOb_-hPmiItC2-JBBm18AsKTxlkQfZLSpLL0wKS4CamJnkTrrFv3m5_BxDlH2jW0nuo2oDemN9CCS2h10ox_1xSncGQajx_ryfhECjZEnAjXaejaDGFR8P9fpy2Yp00AnUTpzJUFMHMPZSkELZprEN3Ikbf4BX1tA4ZpmuSSXeK8v0e47wkq1M0tkZV4kqaMU6zXABLeyA&lib=MlNzCj5pyppvDPljc-bLYMQhq58PSEe5f`
   );
 
-  //carting combo chart
-  const carting_chart_url = axios.get(
-    `https://script.google.com/macros/s/AKfycbz-Wzod1zdRnjFro28xCTA2VXbLnOwPNjsGQ-NS83GzuOaVBp3tdlQ62APG-82xvXfBaw/exec?start_date=${start_date}&end_date=${end_date}`
+  const stuff_url = axios.get(
+    `https://script.google.com/macros/s/AKfycbwNhSud2iE9-aL-SownkMO6gdZKHdi0bFYPBBRhiHOwtuSjIttxaoXnIouKudcDdfCmpg/exec?start_date=01-06-2023&end_date=01-06-2023`
   );
+
+  const pie_chart_url = axios.get(
+    `https://script.googleusercontent.com/macros/echo?user_content_key=a8MxO_yzhM5XsSf4KBlyoofpkIybDPpZVdoPcrCoUpvW7QCbMP-DHtCnQrCYyb7qrAaky-v840MLRTLgjvrfzhgact53uBcfm5_BxDlH2jW0nuo2oDemN9CCS2h10ox_1xSncGQajx_ryfhECjZEnCLg2QiVgThSLpsn8RIe3jYVMU8vOYy-aj8MjNJGTTP8SxvrODfvB5ENt1kvPAO4G_0DLs9MQeRTtAfmJ8x20RP4XDhLM_RWsw&lib=MlNzCj5pyppvDPljc-bLYMQhq58PSEe5f`
+  );
+
   axios
-    .all([
-      stuf_url,
-      stf_pr_url,
-      carting_pr_url,
-      carting_data_set,
-      chart_s_url,
-      carting_chart_url,
-    ])
+    .all([queList, stf_pr_url, winner_url, stuff_url, pie_chart_url])
     .then(function (data) {
-      const one_two_data_set = data[0];
-      const stuff_pr = data[1];
-      const projectDetails = data[2];
-      const cartingDataSet = data[3];
-      const stuff_chart = data[4];
-      const carting_chart = data[5];
-      console.log(one_two_data_set.data.data);
+      const questions = data[0];
+      const projectDetails = data[1];
+      const winners = data[2];
+      const stuffingDataSet = data[3];
+      const pie_chart = data[4];
 
       res.render('warehouseOneTwo', {
-        stuffingReportWarehouseOneTwo: one_two_data_set.data.data,
-        stuffingProjectDetailsOne: stuff_pr.data.data,
-        cartingProjectDetails: projectDetails.data.data,
-        cartingDataSetOneTwo: cartingDataSet.data.data,
-        stuffingChartOneTwo: JSON.stringify(stuff_chart.data.data),
-        cartingChartOneTwo: JSON.stringify(carting_chart.data.data),
+        stuffingReportWarehouseOneTwo: questions.data.data,
+        stuffingProjectDetailsOne: projectDetails.data.data,
+        winners_list: winners.data.data,
+        stuffingReportWarehouseThree: stuffingDataSet.data.data,
+        pieChart: JSON.stringify(pie_chart.data.data),
         isLoaded: true,
-        title: 'Warehouse 1-2 Report',
+        title: 'Quiz Dashboard',
       });
     });
 };
